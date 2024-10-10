@@ -1,0 +1,694 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Tirsa’s Data Analytics Portfolio</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: #FFFFFF; /* Ubah warna teks menjadi putih */
+		background-color: #000000; /* Ubah latar belakang menjadi hitam */
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgb(37, 37, 36);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="11adbe6f-6851-8056-b599-e8f463d15847" class="page sans"><header><h1 class="page-title">Tirsa’s Data Analytics Portfolio</h1><p class="page-description"></p></header><div class="page-body"><div id="11adbe6f-6851-8174-9cb2-f786b6ca44b3" class="column-list"><div id="11adbe6f-6851-81d7-9faf-e66807be201f" style="width:50%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="11adbe6f-6851-8139-9265-ee51b7008a6b"><div style="font-size:1.5em"><span class="icon">👋</span></div><div style="width:100%"><strong>Hello! I&#x27;m Tirsa Pambayun, an Informatics graduate passionate about data analytics. I have experience with Python, SQL, and Excel for data analysis, visualization, and machine learning projects. </strong><p id="11adbe6f-6851-80ad-949a-fc5b53bb6fce" class="">My passion for data analytics grew from solving real-world problems with tools like <strong>Python</strong>, <strong>SQL</strong>, and <strong>Excel</strong>. I’m excited to turn raw data into valuable insights.</p></div></figure><p id="11adbe6f-6851-8090-ba12-c2a4c248a041" class="">
+</p><h1 id="11adbe6f-6851-81b7-baef-d1d87fbeed13" class="">🎓 Education</h1></div><div id="11adbe6f-6851-81a2-a5b2-dd940203469d" style="width:50%" class="column"><figure id="11adbe6f-6851-8110-88c8-c667e3c9f496" class="image"><a href="a7f1c800-d07e-4c5d-ba08-6840d72450bf.png"><img style="width:192px" src="a7f1c800-d07e-4c5d-ba08-6840d72450bf.png"/></a></figure><p id="11adbe6f-6851-8092-a718-c35270c768fb" class="">
+</p></div></div><h3 id="11adbe6f-6851-817a-92d1-cb6e5b1cf061" class="">Bachelor’s Degree in Informatics - Universitas Negeri Malang| 2020 - 2024</h3><ul id="11adbe6f-6851-8180-82ec-de386f97993b" class="bulleted-list"><li style="list-style-type:disc">GPA: 3.8</li></ul><ul id="11adbe6f-6851-816a-818f-f6198f9e1208" class="bulleted-list"><li style="list-style-type:disc">Relevant coursework: Data Science, Business Intelegence, Natural Language Processing, Probility &amp; Statistics, and Database &amp; Information System</li></ul><h3 id="11adbe6f-6851-81db-a768-c7ab494b05b4" class="">MBKM Bangkit Academy - Machine Learning Learning Path | 2023 - 6 Months</h3><ul id="11adbe6f-6851-8114-a8ad-d22bd6e9668c" class="bulleted-list"><li style="list-style-type:disc">Specialized in Data Analytics, Machine Learning, and TensorFlow</li></ul><ul id="11adbe6f-6851-8160-9468-ef3607b6f2fc" class="bulleted-list"><li style="list-style-type:disc">Gain hands-on experience in data collection, data preprocessing, model training, and evaluation</li></ul><h1 id="11adbe6f-6851-8164-ba7d-d79a0b8d433c" class="">🖥 Skills &amp; Tools</h1><ul id="11adbe6f-6851-81b1-a71f-ff843386338c" class="bulleted-list"><li style="list-style-type:disc">Data Preparation<ul id="11adbe6f-6851-808e-a1ce-eef0f2850380" class="bulleted-list"><li style="list-style-type:circle">Excel, Jupyter Notebook, PopSQL, PostgreSQL</li></ul></li></ul><ul id="11adbe6f-6851-8199-ab4c-e2870dc4ae94" class="bulleted-list"><li style="list-style-type:disc">Language<ul id="11adbe6f-6851-8048-b4e7-fa9fdd0d51d0" class="bulleted-list"><li style="list-style-type:circle">Python, SQL</li></ul></li></ul><ul id="11adbe6f-6851-81e2-8483-c89a2f188f53" class="bulleted-list"><li style="list-style-type:disc">Data Visualization<ul id="11adbe6f-6851-8084-bbc4-f657f8805912" class="bulleted-list"><li style="list-style-type:circle">Excel, Tableau, Matplotlib, Seaborn</li></ul></li></ul><ul id="11adbe6f-6851-8188-9d98-d9a26cb8cb31" class="bulleted-list"><li style="list-style-type:disc">Machine Learning<ul id="11adbe6f-6851-8012-a22d-ff133b8aff92" class="bulleted-list"><li style="list-style-type:circle">TensorFlow</li></ul></li></ul><h1 id="11adbe6f-6851-81be-b894-f145b46687fe" class="">🏆 Relevant Courses and Certifications</h1><h3 id="11adbe6f-6851-813e-9422-e4eae8e1164c" class="">Google Courses</h3><ul id="11adbe6f-6851-811c-916f-f514ef411957" class="bulleted-list"><li style="list-style-type:disc">Troubleshooting and Debugging Techniques<br/>Grade Achieved: 100%<br/></li></ul><ul id="11adbe6f-6851-8041-987f-cbdd77fb5a20" class="bulleted-list"><li style="list-style-type:disc">Introduction to Git and GitHub<br/>Grade Achieved: 100%<br/></li></ul><ul id="11adbe6f-6851-80dd-9e15-d83850ee79c1" class="bulleted-list"><li style="list-style-type:disc">Using Python to Interact with the Operating System<br/>Grade Achieved: 100%<br/></li></ul><ul id="11adbe6f-6851-80bd-87ba-ec171939e0f2" class="bulleted-list"><li style="list-style-type:disc">Crash Course on Python<br/>Grade Achieved: 95%<br/></li></ul><ul id="11adbe6f-6851-8040-b109-cb691e296d58" class="bulleted-list"><li style="list-style-type:disc">Foundations: Data, Data, Everywhere<br/>Grade Achieved: 96.25%<br/></li></ul><ul id="11adbe6f-6851-803e-8b0f-d7823c91819b" class="bulleted-list"><li style="list-style-type:disc">Share Data Through the Art of Visualization<br/>Grade Achieved: 87.79%<br/></li></ul><ul id="11adbe6f-6851-801c-ba74-c404cc7395de" class="bulleted-list"><li style="list-style-type:disc">Ask Questions to Make Data-Driven Decisions<br/>Grade Achieved: 93.31%<br/></li></ul><ul id="11adbe6f-6851-8097-993a-ff89dd13372b" class="bulleted-list"><li style="list-style-type:disc">Analyze Data to Answer Questions<br/>Grade Achieved: 94.35%<br/></li></ul><ul id="11adbe6f-6851-803d-98e9-d9f49b391892" class="bulleted-list"><li style="list-style-type:disc">Prepare Data for Exploration<br/>Grade Achieved: 96.64%<br/></li></ul><ul id="11adbe6f-6851-807d-a52f-f5a857eb3ecb" class="bulleted-list"><li style="list-style-type:disc">Process Data from Dirty to Clean<br/>Grade Achieved: 87.98%<br/></li></ul><h3 id="11adbe6f-6851-819c-909a-c1c07ab99b1c" class="">DeepLearning.AI and Imperial College London Courses</h3><ul id="11adbe6f-6851-812f-8343-d9dc74666794" class="bulleted-list"><li style="list-style-type:disc">Mathematics for Machine Learning: PCA<br/>Grade Achieved: 98%<br/></li></ul><ul id="11adbe6f-6851-8085-be93-c6461426819b" class="bulleted-list"><li style="list-style-type:disc">Mathematics for Machine Learning: Multivariate Calculus<br/>Grade Achieved: 98.75%<br/></li></ul><ul id="11adbe6f-6851-80ca-b92f-e764c369c023" class="bulleted-list"><li style="list-style-type:disc">Advanced Learning Algorithms<br/>Grade Achieved: 100%<br/></li></ul><ul id="11adbe6f-6851-80e8-9740-ffa23b58e070" class="bulleted-list"><li style="list-style-type:disc">Supervised Machine Learning: Regression and Classification<br/>Grade Achieved: 99.83%<br/></li></ul><ul id="11adbe6f-6851-803e-a21e-d33370eefdb6" class="bulleted-list"><li style="list-style-type:disc">Mathematics for Machine Learning: Linear Algebra<br/>Grade Achieved: 98%<br/></li></ul><ul id="11adbe6f-6851-80cb-976f-d4a711c7a2f7" class="bulleted-list"><li style="list-style-type:disc">Sequences, Time Series and Prediction<br/>Grade Achieved: 100%<br/></li></ul><ul id="11adbe6f-6851-8080-87a1-c4ef11d099e9" class="bulleted-list"><li style="list-style-type:disc">Browser-based Models with TensorFlow.js<br/>Grade Achieved: 96.46%<br/></li></ul><ul id="11adbe6f-6851-8001-a47e-ff4c592b72a3" class="bulleted-list"><li style="list-style-type:disc">Introduction to TensorFlow for AI, ML, and DL<br/>Grade Achieved: 99%<br/></li></ul><ul id="11adbe6f-6851-80f3-9459-e6a89f1eb920" class="bulleted-list"><li style="list-style-type:disc">Data Pipelines with TensorFlow Data Services<br/>Grade Achieved: 100%<br/></li></ul><ul id="11adbe6f-6851-80c8-b9e4-db520a0091c4" class="bulleted-list"><li style="list-style-type:disc">Convolutional Neural Networks in TensorFlow<br/>Grade Achieved: 98.57%<br/></li></ul><ul id="11adbe6f-6851-80cd-977c-c62b71f22212" class="bulleted-list"><li style="list-style-type:disc">Natural Language Processing in TensorFlow<br/>Grade Achieved: 99.12%<br/></li></ul><ul id="11adbe6f-6851-80a8-8a63-d0dcbbd7db2a" class="bulleted-list"><li style="list-style-type:disc">Device-based Models with TensorFlow Lite<br/>Grade Achieved: 98.80%<br/></li></ul><ul id="11adbe6f-6851-8069-9a64-d3a7abd3d8ff" class="bulleted-list"><li style="list-style-type:disc">Advanced Deployment Scenarios with TensorFlow<br/>Grade Achieved: 97.30%<br/></li></ul><ul id="11adbe6f-6851-8068-996b-d3a56d01a117" class="bulleted-list"><li style="list-style-type:disc">Unsupervised Learning, Recommenders, Reinforcement Learning<br/>Grade Achieved: 100%<br/></li></ul><ul id="11adbe6f-6851-804b-91a4-cbba90ef191c" class="bulleted-list"><li style="list-style-type:disc">Structuring Machine Learning Projects<br/>Grade Achieved: 83.33%<br/></li></ul><h1 id="11adbe6f-6851-816e-b036-efec983f707f" class="">🚀 Projects</h1><h3 id="11adbe6f-6851-8119-b52c-c1124c83551d" class="">🚲 Bike Sales Dashboard</h3><figure id="11bdbe6f-6851-8054-811c-cb772cc6c628" class="image"><a href="dash.png"><img style="width:432px" src="dash.png"/></a></figure><ul id="11adbe6f-6851-818e-8a51-c3f4afbc2668" class="bulleted-list"><li style="list-style-type:disc">Overview<p id="11bdbe6f-6851-8048-89ff-e702aa5717a6" class="">In this project, I analyzed bike sales data using Excel&#x27;s Pivot Table to gain valuable insights into customer characteristics and sales trends. The dashboard is designed to help the company better understand their customers and optimize business strategies.</p></li></ul><ul id="11adbe6f-6851-81da-8f98-ddb7473ce7db" class="bulleted-list"><li style="list-style-type:disc">Scope<p id="11bdbe6f-6851-809f-bce9-fb22d5961a06" class="">Exploring bike sales data to uncover purchasing patterns based on demographic characteristics such as marital status, region, education level, average income, commute habits, and customer age brackets.</p></li></ul><ul id="11adbe6f-6851-8102-982f-cd5ef64049c4" class="bulleted-list"><li style="list-style-type:disc">Tools:<p id="11bdbe6f-6851-80a9-a837-dd4b769161f5" class="">Excel (Pivot Table).</p></li></ul><ul id="11adbe6f-6851-803b-abe7-db4c4dc1c97e" class="bulleted-list"><li style="list-style-type:disc">Methodology<div id="11adbe6f-6851-800e-a81e-e44c748294e1" class="column-list"><div id="11adbe6f-6851-80ae-aa92-dc1d38ed6719" style="width:100%" class="column"><ul id="11adbe6f-6851-8080-8836-cc762448c672" class="bulleted-list"><li style="list-style-type:disc">💾 Data Collection<p id="11bdbe6f-6851-805c-b0bf-cb4bc199ce18" class=""> Used secondary dataset</p></li></ul></div><div id="11adbe6f-6851-809d-a723-fb1f07fb4ff2" style="width:100%" class="column"><ul id="11adbe6f-6851-80ff-8140-e775b76f5318" class="bulleted-list"><li style="list-style-type:disc">⚙ Data Preparation &amp; Cleansing<ul id="11bdbe6f-6851-8082-93eb-dd09bf33bb79" class="bulleted-list"><li style="list-style-type:circle">Removed all duplicate records using the &#x27;Remove Duplicates&#x27; function.</li></ul><ul id="11bdbe6f-6851-806b-9d40-cab4f06efa91" class="bulleted-list"><li style="list-style-type:circle">Renamed values in the &#x27;Marital Status&#x27; attribute, changing &#x27;M&#x27; to &#x27;Married&#x27; and &#x27;S&#x27; to &#x27;Single.&#x27;</li></ul><ul id="11bdbe6f-6851-80e2-9f5b-e2514c57f57d" class="bulleted-list"><li style="list-style-type:circle">Renamed values in the &#x27;Gender&#x27; attribute, changing &#x27;F&#x27; to &#x27;Female&#x27; and &#x27;M&#x27; to &#x27;Male.&#x27;</li></ul><ul id="11bdbe6f-6851-808d-b446-d675d1e91d16" class="bulleted-list"><li style="list-style-type:circle">Created a new &#x27;Age Bracket&#x27; attribute to categorize ages into &#x27;Old,&#x27; &#x27;Middle Age,&#x27; and &#x27;Adolescent.&#x27;</li></ul></li></ul></div></div><div id="11adbe6f-6851-803e-939a-f36c06ad8dcc" class="column-list"><div id="11adbe6f-6851-8023-b223-f25c853847c4" style="width:100%" class="column"><ul id="11adbe6f-6851-80c6-a978-f415752d23f7" class="bulleted-list"><li style="list-style-type:disc">📈 Pivot Table Analysis<p id="11bdbe6f-6851-80ab-836d-d943949dfd4d" class="">Used Pivot Tables to group and analyze data based on various customer demographic attributes.</p></li></ul></div><div id="11adbe6f-6851-803b-a0e5-e20efdf0ba4c" style="width:100%" class="column"><ul id="11adbe6f-6851-8002-8a50-c14011091207" class="bulleted-list"><li style="list-style-type:disc">📊 Visualization<p id="11bdbe6f-6851-8084-9f22-f7de1fb6e92c" class="">Created a visual dashboard displaying sales trends and purchasing patterns based on customer demographics.</p></li></ul></div></div></li></ul><ul id="11bdbe6f-6851-8071-96bb-da44e6d12f91" class="bulleted-list"><li style="list-style-type:disc">💡 <strong>Insights &amp; Recommendations</strong><ul id="11bdbe6f-6851-801a-bc45-dc6858ccb52f" class="toggle"><li><details open=""><summary>Average Income by Purchase</summary><p id="11bdbe6f-6851-80ff-89f0-feddf13b79f6" class="">Customers with higher average income are more likely to purchase bikes, indicating that income plays a significant role in purchasing decisions.</p><p id="11bdbe6f-6851-806f-b9bf-d6093aa1661b" class=""><mark class="highlight-teal"><strong>Recommendation:</strong></mark><mark class="highlight-teal"> </mark>Develop targeted marketing strategies for high-income individuals and promote premium bike models to this segment.</p></details></li></ul><ul id="11bdbe6f-6851-8035-9b24-ebf18c23dbcf" class="toggle"><li><details open=""><summary>Count of Purchased Bikes by Customer Age Bracket</summary><p id="bfec5475-5858-45b5-876d-b1051e85520d" class="">Middle Age customers represent the highest purchase count, indicating a key demographic for targeting.</p><p id="526cd77a-579a-4a9f-a06b-bf1cfcf67801" class=""><mark class="highlight-teal"><strong>Recommendation:</strong></mark> Create targeted campaigns that focus on the benefits of biking for health and lifestyle specifically for the Middle Age demographic.</p></details></li></ul><ul id="11bdbe6f-6851-80d6-913f-fef090aa2424" class="toggle"><li><details open=""><summary>Count of Purchased Bikes by Customer Commute Distance</summary><p id="229c6288-b6ed-4ef9-a930-cd0dc22acfe5" class="">Customers commuting within 0-1 miles show the highest purchase rates, suggesting targeted marketing in these areas.</p><p id="566ec0ab-b199-45c2-80f4-0b014775ffc1" class=""><mark class="highlight-teal"><strong>Recommendation:</strong></mark> Focus advertising efforts on promoting bikes for short-distance commuting, highlighting convenience and efficiency.</p></details></li></ul><ul id="11bdbe6f-6851-80be-a16f-d1b4b345e368" class="toggle"><li><details open=""><summary>Marital Status</summary><p id="e3795baa-c9e1-45af-a951-977c68920d2d" class="">Selecting “Married” showed a higher purchase rate, confirming that this demographic is more engaged.</p><p id="e8bb1d1f-cfbd-4d15-9e92-93a99a7dc982" class=""><mark class="highlight-teal"><strong>Recommendation:</strong></mark> Increase marketing content aimed at married couples, especially wives, promoting cycling as a family-friendly activity.</p></details></li></ul><ul id="11bdbe6f-6851-8004-9330-e040b4c5cc16" class="toggle"><li><details open=""><summary>Region</summary><p id="595226a3-6bf2-4072-956f-3a12daab8cb3" class="">Customers from North America have the highest average income per purchase compared to those in Europe and the Pacific region. The difference in average income between buyers and non-buyers is also significant in North America, indicating a strong purchasing potential. In Europe and the Pacific, the average incomes of buyers and non-buyers are closer together, suggesting a more challenging market.</p><p id="dafcf3d3-2a6b-43ee-81f4-3607be807cb0" class=""><mark class="highlight-teal"><strong>Recommendation:</strong></mark> Adjust marketing strategy for North America to increase purchasing power, while developing targeted initiatives in Europe and the Pacific to encourage bicycle purchases.</p></details></li></ul><ul id="11bdbe6f-6851-80d1-9b80-dcc64f515d59" class="toggle"><li><details open=""><summary>Education Level</summary><p id="62f046f0-ac6b-4004-b85f-2ffceb13b3f1" class="">Individuals with a high school education and partial college education have a higher purchase rate compared to those who did not purchase.</p><p id="b2cb9522-c476-45df-8977-7a846ad5b1fe" class=""><mark class="highlight-teal"><strong>Recommendation:</strong></mark> Adjust marketing strategies to emphasize the health benefits and financial savings associated with cycling, targeting this educational demographic.</p></details></li></ul></li></ul><ul id="11bdbe6f-6851-804c-90b1-cb234bc36f40" class="bulleted-list"><li style="list-style-type:disc">Link<p id="11bdbe6f-6851-804d-b53c-c7cc2d07c463" class=""><a href="https://github.com/Tirsa-P/Bike-Sales-Dashboard">https://github.com/Tirsa-P/Bike-Sales-Dashboard</a></p></li></ul><p id="11bdbe6f-6851-800c-928f-ef23f2fbdd49" class="">
+</p><h3 id="11adbe6f-6851-81e4-ad30-d6c8989477cc" class="">📱 &quot;Smart Rinse&quot; Mobile App</h3><figure id="11bdbe6f-6851-8023-9055-d78f7dbf759e" class="image"><a href="banner-product.jpg"><img style="width:336px" src="banner-product.jpg"/></a></figure><ul id="11adbe6f-6851-81b0-b797-e8e6bc50aa6d" class="bulleted-list"><li style="list-style-type:disc">Overview<p id="11bdbe6f-6851-8033-b19b-ea17123c5a32" class="">Smart Rinse is a dual-purpose application designed for both end users and laundry business owners. The app for end users provides recommendations for nearby laundry services based on ratings and sentiment analysis of customer reviews, while the app for laundry business owners allows them to register their businesses and process orders online.</p><p id="11bdbe6f-6851-803b-9a08-efbee5180e93" class="">As part of the machine learning team, I was responsible for developing the sentiment analysis model for laundry service reviews to enhance the recommendation system for end users. This project was recognized as part of the top 68 Capstone Project in Bangkit Academy 2023.</p></li></ul><ul id="11adbe6f-6851-81da-bb01-fdeef3ac532c" class="bulleted-list"><li style="list-style-type:disc">Scope<p id="11bdbe6f-6851-8048-be1e-c4480b94c097" class="">To develop a machine learning model that performs sentiment analysis on laundry service reviews, categorizing them as positive or negative, and providing recommendations for end users based on review sentiment and proximity.</p></li></ul><ul id="11adbe6f-6851-8114-be58-d527e6d9a057" class="bulleted-list"><li style="list-style-type:disc">Tools &amp; Technologies<ul id="11bdbe6f-6851-807f-865c-dad9c8c190c6" class="bulleted-list"><li style="list-style-type:circle">Python (TensorFlow, Pandas, Numpy, Scikit-learn, NLTK)</li></ul><ul id="11bdbe6f-6851-8010-8a79-d3cbbad866d9" class="bulleted-list"><li style="list-style-type:circle">Spreadsheet (for data labeling)</li></ul><ul id="11bdbe6f-6851-8063-be94-d23d3716943e" class="bulleted-list"><li style="list-style-type:circle">H5 Format (for model deployment)</li></ul></li></ul><ul id="11adbe6f-6851-8093-8cb7-ec494c66fb99" class="bulleted-list"><li style="list-style-type:disc">Methodology:<div id="11bdbe6f-6851-804e-8a3a-c3bbc9ea45f2" class="column-list"><div id="11bdbe6f-6851-8037-b51c-f2393789b1cc" style="width:100%" class="column"><ul id="11bdbe6f-6851-80c3-94c0-ee6d0341f50e" class="bulleted-list"><li style="list-style-type:disc">Data Collection:<p id="11bdbe6f-6851-8034-aa1b-c40df2271e4f" class="">We collected reviews of laundry services from Google Maps</p></li></ul></div><div id="11bdbe6f-6851-8031-a5b4-d1b3c3fc67b2" style="width:100%" class="column"><ul id="11bdbe6f-6851-80be-b70a-deab56f178f7" class="bulleted-list"><li style="list-style-type:disc">Data Preparation &amp; Cleaning:<ul id="11bdbe6f-6851-80e3-b65c-fe8eff6b9130" class="bulleted-list"><li style="list-style-type:circle">Removed duplicates, irrelevant reviews, and cleaned up text data by eliminating special characters and performing tokenization.</li></ul><ul id="11bdbe6f-6851-80f5-9c2c-dcd8193cdb25" class="bulleted-list"><li style="list-style-type:circle">Labeled reviews manually as positive or negative based on the overall sentiment conveyed by the customers.</li></ul></li></ul></div></div><div id="11bdbe6f-6851-809c-8934-ecf468397286" class="column-list"><div id="11bdbe6f-6851-8065-a5b4-e8c2abca1447" style="width:100%" class="column"><ul id="11bdbe6f-6851-809a-9e4d-db3926682aab" class="bulleted-list"><li style="list-style-type:disc">Balancing the Dataset<p id="11bdbe6f-6851-8077-8deb-f7e162f0aa0b" class="">Ensured that the dataset was balanced between positive and negative reviews to avoid model bias.</p><p id="11bdbe6f-6851-8092-adf9-fe83b8100602" class="">
+</p></li></ul><p id="11bdbe6f-6851-80a2-b422-eaf3071bfd4d" class="">
+</p><p id="11bdbe6f-6851-800f-ba37-d85f55f9c1f0" class="">
+</p><p id="11bdbe6f-6851-80d8-b695-ef0678af295d" class="">
+</p><ul id="11bdbe6f-6851-80f0-938b-d909f5fdcd88" class="bulleted-list"><li style="list-style-type:disc">Model Training &amp; Validation<ul id="11bdbe6f-6851-80e9-8428-f3d55fa692dd" class="bulleted-list"><li style="list-style-type:circle">Trained the model using a balanced dataset and validated it with unseen data to ensure its effectiveness.</li></ul></li></ul></div><div id="11bdbe6f-6851-80e7-929c-c11745f487df" style="width:100%" class="column"><ul id="11bdbe6f-6851-8095-941a-cda0bec46b49" class="bulleted-list"><li style="list-style-type:disc">Model Development<ul id="11bdbe6f-6851-804d-80cc-c9105117cd35" class="bulleted-list"><li style="list-style-type:circle">Used TensorFlow to build and train the sentiment analysis model.<br/>Processed text data using techniques such as tokenization, padding, and embedding to prepare it for the model.<br/></li></ul><ul id="11bdbe6f-6851-8050-b487-cc805ee6fa6e" class="bulleted-list"><li style="list-style-type:circle">Evaluated different models to select the most accurate for the task.</li></ul><p id="11bdbe6f-6851-8050-abed-e7bd8a984628" class="">
+</p></li></ul></div></div></li></ul><ul id="11bdbe6f-6851-8053-9e0c-e4b60b3fd607" class="bulleted-list"><li style="list-style-type:disc">Link<p id="3c3141b6-fb87-46ad-8c8e-d1a7e9802f2d" class=""><a href="https://github.com/smart-rinse">https://github.com/smart-rinse</a></p></li></ul><h1 id="11adbe6f-6851-81f9-8099-f18e99944eaf" class="">📬 Contact</h1><p id="11adbe6f-6851-8142-ba8d-dd0e09195150" class="">Let&#x27;s create something amazing together! Reach out to me at:</p><ul id="11adbe6f-6851-8178-b3c0-ead605aabc6d" class="bulleted-list"><li style="list-style-type:disc">Email: tirsap1012@gmail.com</li></ul><ul id="11adbe6f-6851-8118-a0ea-e674db1c26d5" class="bulleted-list"><li style="list-style-type:disc">LinkedIn: <a href="https://www.linkedin.com/in/tirsa-pambayun-6463381b8/">https://www.linkedin.com/in/tirsa-pambayun-6463381b8/</a></li></ul><ul id="11adbe6f-6851-814a-93fb-e889ed69a58f" class="bulleted-list"><li style="list-style-type:disc">Medium: <a href="https://medium.com/@tirsap">https://medium.com/@tirsap</a></li></ul><p id="11adbe6f-6851-8124-a5b5-f9cb4788c821" class="">Thanks for stopping by my corner of the internet! 💫</p><p id="11adbe6f-6851-8185-bc6b-d29ab5bc353f" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
